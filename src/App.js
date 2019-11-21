@@ -8,9 +8,7 @@ function App() {
 
   return (
     <div className="section container">
-      <div>You should replace with with something to render the message sending box
-      and however you want to render.</div>
-      <BigText/>
+      <ChatContainer/>
     </div>
   );
 }

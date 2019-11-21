@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
 import io from "socket.io-client";
 import {IP_ADDR} from "../config/Constants";
+import MessageDisplay from "./MessageDisplay";
+import RenderChats from "./RenderChats";
 
 
 function ChatDisplay(props) {
@@ -34,7 +36,15 @@ function ChatDisplay(props) {
 
   return (
     <div>
-      we have {chats.length}. You should add a component to render them.
+      {
+        chats.map(chat => {
+          return <MessageDisplay
+            author={chat.author}
+            date={chat.date}
+            message={chat.message}
+            key={chat.date}/>
+        })
+      }
     </div>
   );
 }
